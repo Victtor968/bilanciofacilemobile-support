@@ -5,124 +5,191 @@
     <title>BilancioFacileMobile – Supporto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --bg: #f5f5f7;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --secondary: #6e6e73;
+            --accent: #007aff;
+            --border: #e5e5ea;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
             margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 720px;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        h1 {
-            margin-top: 0;
-            font-size: 28px;
-        }
-        p {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
-        form {
-            margin-top: 32px;
+
+        .wrapper {
+            max-width: 780px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
+
+        header {
+            margin-bottom: 32px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0 0 8px 0;
+        }
+
+        header p {
+            color: var(--secondary);
+            margin: 0;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        form {
+            margin-top: 24px;
+        }
+
         label {
             display: block;
-            margin-bottom: 6px;
             font-weight: 600;
+            margin-bottom: 6px;
         }
+
         input, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
+            border-radius: 10px;
+            border: 1px solid var(--border);
             font-size: 16px;
+            font-family: inherit;
         }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
         button {
-            background-color: #007aff;
+            background-color: var(--accent);
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
+            padding: 14px 24px;
+            border-radius: 12px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
         }
+
         button:hover {
-            background-color: #005fcc;
+            opacity: 0.9;
         }
-        .footer {
-            margin-top: 40px;
+
+        footer {
+            text-align: center;
             font-size: 14px;
-            color: #6e6e73;
+            color: var(--secondary);
+            margin-top: 40px;
+        }
+
+        .privacy p {
+            color: var(--secondary);
+            font-size: 15px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>BilancioFacileMobile – Supporto</h1>
+<div class="wrapper">
 
-    <p>
-        <strong>BilancioFacileMobile</strong> è un’app companion per iPhone dell’app macOS
-        <strong>BilancioFacile</strong>, progettata per consentire l’inserimento rapido di spese
-        domestiche e documenti anche quando si è in mobilità.
-    </p>
+    <header>
+        <h1>BilancioFacileMobile</h1>
+        <p>Pagina di supporto ufficiale</p>
+    </header>
 
-    <p>
-        L’app è pensata per un utilizzo privato e personale. Tutti i dati rimangono associati
-        esclusivamente all’account Apple dell’utente e vengono sincronizzati tramite i servizi
-        iCloud.
-    </p>
-
-    <p>
-        Se riscontri problemi, hai domande o desideri segnalare un malfunzionamento,
-        puoi utilizzare il modulo di contatto qui sotto.
-    </p>
-
-    <form action="mailto:vittorio.zacca@gmail.com" method="post" enctype="text/plain">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="Nome" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required>
-
-        <label for="messaggio">Messaggio</label>
-        <textarea id="messaggio" name="Messaggio" rows="6" required></textarea>
-
-        <button type="submit">Invia richiesta di supporto</button>
-    </form>
-
-    <div class="footer">
+    <div class="card">
         <p>
-            Questa applicazione non raccoglie dati personali tramite questo sito.
-            Il modulo utilizza il client email dell’utente per l’invio del messaggio.
+            <strong>BilancioFacileMobile</strong> è l’app companion per iPhone
+            dell’app macOS <strong>BilancioFacile</strong>.
+            Consente di inserire spese domestiche e archiviare documenti
+            anche quando si è in mobilità, senza dover utilizzare il computer.
+        </p>
+
+        <p>
+            L’app è destinata a un utilizzo privato e personale.
+            Tutti i dati rimangono sotto il controllo dell’utente e vengono
+            sincronizzati esclusivamente tramite i servizi iCloud
+            associati all’account Apple del dispositivo.
         </p>
     </div>
+
+    <div class="card">
+        <h2>Richiesta di supporto</h2>
+
+        <p>
+            Per segnalare un problema o richiedere assistenza,
+            compila il modulo seguente.
+        </p>
+
+        <form action="mailto:vittorio.zacca@gmail.com" method="post" enctype="text/plain">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="Nome" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="Messaggio" rows="6" required></textarea>
+
+            <button type="submit">Invia richiesta</button>
+        </form>
+    </div>
+
+    <div class="card privacy">
+        <h2>Informativa sulla Privacy</h2>
+
+        <p>
+            BilancioFacileMobile non raccoglie, non memorizza e non condivide
+            dati personali con terze parti.
+        </p>
+
+        <p>
+            Tutti i dati inseriti dall’utente rimangono associati esclusivamente
+            all’account Apple del dispositivo e vengono utilizzati solo
+            per la sincronizzazione tramite i servizi iCloud.
+        </p>
+
+        <p>
+            Questo sito di supporto non utilizza cookie,
+            sistemi di tracciamento o strumenti di analisi.
+        </p>
+    </div>
+
+    <footer>
+        © BilancioFacileMobile – Supporto
+    </footer>
+
 </div>
-<hr>
-
-<h2>Informativa sulla Privacy</h2>
-
-<p>
-BilancioFacileMobile non raccoglie, non memorizza e non condivide dati personali
-con terze parti.
-</p>
-
-<p>
-Tutti i dati inseriti dall’utente rimangono associati esclusivamente
-all’account Apple del dispositivo e vengono utilizzati solo per la
-sincronizzazione tramite i servizi iCloud.
-</p>
-
-<p>
-Questo sito di supporto non utilizza cookie, sistemi di tracciamento
-né strumenti di analisi.
-</p>
 
 </body>
 </html>
