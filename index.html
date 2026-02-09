@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>BilancioFacileMobile – Supporto</title>
+    <title>Bilancio Facile - Supporto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
@@ -33,6 +33,38 @@
             padding: 0 20px;
         }
 
+        .app-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            border-radius: 12px;
+            background: var(--card);
+            padding: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .app-selector button {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--secondary);
+            transition: all 0.2s;
+        }
+
+        .app-selector button.active {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .app-selector button:hover:not(.active) {
+            background-color: var(--border);
+        }
+
         header {
             margin-bottom: 32px;
         }
@@ -53,6 +85,14 @@
             padding: 32px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             margin-bottom: 32px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
         }
 
         h2 {
@@ -90,7 +130,7 @@
             border-color: var(--accent);
         }
 
-        button {
+        button[type="submit"] {
             background-color: var(--accent);
             color: white;
             border: none;
@@ -101,7 +141,7 @@
             cursor: pointer;
         }
 
-        button:hover {
+        button[type="submit"]:hover {
             opacity: 0.9;
         }
 
@@ -122,74 +162,181 @@
 
 <div class="wrapper">
 
-    <header>
-        <h1>BilancioFacileMobile</h1>
-        <p>Pagina di supporto ufficiale</p>
-    </header>
-
-    <div class="card">
-        <p>
-            <strong>BilancioFacileMobile</strong> è l’app companion per iPhone
-            dell’app macOS <strong>BilancioFacile</strong>.
-            Consente di inserire spese domestiche e archiviare documenti
-            anche quando si è in mobilità, senza dover utilizzare il computer.
-        </p>
-
-        <p>
-            L’app è destinata a un utilizzo privato e personale.
-            Tutti i dati rimangono sotto il controllo dell’utente e vengono
-            sincronizzati esclusivamente tramite i servizi iCloud
-            associati all’account Apple del dispositivo.
-        </p>
+    <div class="app-selector">
+        <button class="app-btn active" data-app="bilancio">BilancioFacile</button>
+        <button class="app-btn" data-app="mobile">BilancioFacileMobile</button>
     </div>
 
-    <div class="card">
-        <h2>Richiesta di supporto</h2>
+    <!-- SEZIONE BilancioFacile -->
+    <div class="section active" data-section="bilancio">
+        <header>
+            <h1>BilancioFacile</h1>
+            <p>Pagina di supporto ufficiale</p>
+        </header>
 
-        <p>
-            Per segnalare un problema o richiedere assistenza,
-            compila il modulo seguente.
-        </p>
+        <div class="card">
+            <p>
+                <strong>BilancioFacile</strong> è un'app per macOS che consente
+                di gestire le spese domestiche e archiviare i documenti importanti
+                in modo semplice e organizzato.
+            </p>
 
-        <form action="mailto:vittorio.zacca@gmail.com" method="post" enctype="text/plain">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="Nome" required>
+            <p>
+                L'app è destinata a un utilizzo privato e personale.
+                Tutti i dati rimangono sotto il controllo dell'utente e vengono
+                sincronizzati esclusivamente tramite i servizi iCloud
+                associati all'account Apple del dispositivo.
+            </p>
+        </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required>
+        <div class="card">
+            <h2>Richiesta di supporto</h2>
 
-            <label for="messaggio">Messaggio</label>
-            <textarea id="messaggio" name="Messaggio" rows="6" required></textarea>
+            <p>
+                Per segnalare un problema o richiedere assistenza,
+                compila il modulo seguente.
+            </p>
 
-            <button type="submit">Invia richiesta</button>
-        </form>
+            <form action="mailto:vittorio.zacca@gmail.com?subject=Supporto BilancioFacile" method="post" enctype="text/plain">
+                <label for="nome-bilancio">Nome</label>
+                <input type="text" id="nome-bilancio" name="Nome" required>
+
+                <label for="email-bilancio">Email</label>
+                <input type="email" id="email-bilancio" name="Email" required>
+
+                <label for="messaggio-bilancio">Messaggio</label>
+                <textarea id="messaggio-bilancio" name="Messaggio" rows="6" required></textarea>
+
+                <button type="submit">Invia richiesta</button>
+            </form>
+        </div>
+
+        <div class="card privacy">
+            <h2>Informativa sulla Privacy</h2>
+
+            <p>
+                BilancioFacile non raccoglie, non memorizza e non condivide
+                dati personali con terze parti.
+            </p>
+
+            <p>
+                Tutti i dati inseriti dall'utente rimangono associati esclusivamente
+                all'account Apple del dispositivo e vengono utilizzati solo
+                per la sincronizzazione tramite i servizi iCloud.
+            </p>
+
+            <p>
+                Questo sito di supporto non utilizza cookie,
+                sistemi di tracciamento o strumenti di analisi.
+            </p>
+        </div>
+
+        <footer>
+            (c) BilancioFacile - Supporto
+        </footer>
     </div>
 
-    <div class="card privacy">
-        <h2>Informativa sulla Privacy</h2>
+    <!-- SEZIONE BilancioFacileMobile -->
+    <div class="section" data-section="mobile">
+        <header>
+            <h1>BilancioFacileMobile</h1>
+            <p>Pagina di supporto ufficiale</p>
+        </header>
 
-        <p>
-            BilancioFacileMobile non raccoglie, non memorizza e non condivide
-            dati personali con terze parti.
-        </p>
+        <div class="card">
+            <p>
+                <strong>BilancioFacileMobile</strong> è l'app companion per iPhone
+                dell'app macOS <strong>BilancioFacile</strong>.
+                Consente di inserire spese domestiche e archiviare documenti
+                anche quando si è in mobilità, senza dover utilizzare il computer.
+            </p>
 
-        <p>
-            Tutti i dati inseriti dall’utente rimangono associati esclusivamente
-            all’account Apple del dispositivo e vengono utilizzati solo
-            per la sincronizzazione tramite i servizi iCloud.
-        </p>
+            <p>
+                L'app è destinata a un utilizzo privato e personale.
+                Tutti i dati rimangono sotto il controllo dell'utente e vengono
+                sincronizzati esclusivamente tramite i servizi iCloud
+                associati all'account Apple del dispositivo.
+            </p>
+        </div>
 
-        <p>
-            Questo sito di supporto non utilizza cookie,
-            sistemi di tracciamento o strumenti di analisi.
-        </p>
+        <div class="card">
+            <h2>Richiesta di supporto</h2>
+
+            <p>
+                Per segnalare un problema o richiedere assistenza,
+                compila il modulo seguente.
+            </p>
+
+            <form action="mailto:vittorio.zacca@gmail.com?subject=Supporto BilancioFacileMobile" method="post" enctype="text/plain">
+                <label for="nome-mobile">Nome</label>
+                <input type="text" id="nome-mobile" name="Nome" required>
+
+                <label for="email-mobile">Email</label>
+                <input type="email" id="email-mobile" name="Email" required>
+
+                <label for="messaggio-mobile">Messaggio</label>
+                <textarea id="messaggio-mobile" name="Messaggio" rows="6" required></textarea>
+
+                <button type="submit">Invia richiesta</button>
+            </form>
+        </div>
+
+        <div class="card privacy">
+            <h2>Informativa sulla Privacy</h2>
+
+            <p>
+                BilancioFacileMobile non raccoglie, non memorizza e non condivide
+                dati personali con terze parti.
+            </p>
+
+            <p>
+                Tutti i dati inseriti dall'utente rimangono associati esclusivamente
+                all'account Apple del dispositivo e vengono utilizzati solo
+                per la sincronizzazione tramite i servizi iCloud.
+            </p>
+
+            <p>
+                Questo sito di supporto non utilizza cookie,
+                sistemi di tracciamento o strumenti di analisi.
+            </p>
+        </div>
+
+        <footer>
+            (c) BilancioFacileMobile - Supporto
+        </footer>
     </div>
-
-    <footer>
-        © BilancioFacileMobile – Supporto
-    </footer>
 
 </div>
+
+<script>
+    document.querySelectorAll('.app-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const app = this.dataset.app;
+
+            // Aggiorna il pulsante attivo
+            document.querySelectorAll('.app-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            // Aggiorna il contenuto visibile
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelector('[data-section="' + app + '"]').classList.add('active');
+
+            // Salva la scelta nel localStorage
+            localStorage.setItem('selectedApp', app);
+        });
+    });
+
+    // Ripristina la scelta precedente al caricamento
+    const savedApp = localStorage.getItem('selectedApp') || 'bilancio';
+    const appBtn = document.querySelector('[data-app="' + savedApp + '"]');
+    if (appBtn) {
+        appBtn.click();
+    }
+</script>
 
 </body>
 </html>
